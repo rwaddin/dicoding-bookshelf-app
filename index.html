@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Buku Saya</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="assets/bootstrap-5.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/tabler-icons-1.84.0/iconfont/tabler-icons.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="assets/core/css/main.css">
+</head>
+<body>
+<div class="container mt-4">
+    <div class="d-flex w-100 justify-content-center bg-light my-3 rounded-2 border border-dark shadow">
+        <h1>&mdash; MY BookShelf &mdash;</h1>
+    </div>
+	<div class="row">
+		<div class="col-sm-4">
+			<div class="card border border-dark shadow">
+				<div class="card-header border-bottom border-dark">
+					<h3><i class="ti ti-circle-plus"></i> Tambah Buku</h3>
+				</div>
+				<div class="card-body">
+					<form id="formTambahBuku">
+						<div class="form-floating mb-3">
+							<input name="judul" type="text" class="form-control" id="inputJudul" placeholder="Judul" required>
+							<label>Judul</label>
+						</div>
+						<div class="form-floating mb-3">
+							<input name="penulis" type="text" class="form-control" id="inputPenulis" placeholder="penulis" required>
+							<label >Penulis</label>
+						</div>
+						<div class="form-floating mb-3">
+							<input name="tahun" type="number" class="form-control" id="inputTahun" placeholder="tahun" step="1" min="1900" max="2022" required>
+							<label >Tahun</label>
+						</div>
+						<div class="form-check form-switch mb-3">
+							<input class="form-check-input" name="selesai" type="checkbox" id="inputSelesai" role="switch">
+							<label class="form-check-label" >Selesai dibaca</label>
+						</div>
+
+						<button class="btn btn-dark w-100" id="buttonSimpan" type="submit">Simpan Buku ke <span id="infoRak" class="fw-bold">Belum selesai dibaca</span></button>
+					</form>
+				</div> <!--end .card-body-->
+			</div>
+		</div>
+		<div class="col-sm-8">
+			<div class="input-group my-3 mt-sm-0  rounded-2">
+				<input type="text" id="inputCari" class="form-control" placeholder="Cari judul buku" aria-describedby="basic-addon2">
+				<span onclick="cari()" class="input-group-text bg-info text-white" style="cursor:pointer;" id="basic-addon2"><i class="ti ti-search"></i> Cari</span>
+			</div>
+			<div class="row">
+				<div class="col-sm-6 mb-3 ">
+					<div class="card border border-warning shadow">
+						<div class="card-header bg-warning text-center">
+							<i class="ti ti-list-details"></i> Belum Selesai Dibaca
+						</div>
+						<div class="card-body">
+							<div class="row" id="boxBelumSelesai"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="card border border-success shadow text-center">
+						<div class="card-header bg-success text-white">
+							<i class="ti ti-list-check"></i> Selesai Dibaca
+						</div>
+						<div class="card-body">
+                            <div class="row" id="boxSudahSelesai"></div>
+                        </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="assets/core/js/main.js?v=1"></script>
+<script>
+
+</script>
+</body>
+</html>
